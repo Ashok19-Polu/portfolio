@@ -769,10 +769,7 @@
 
   skillBars.forEach(bar => barObserver.observe(bar));
 </script>
-
-</body>
-</html>
-<!-- AI CHATBOT -->
+  <!-- AI CHATBOT -->
 
 <button id="chat-btn">🤖 AI Assistant</button>
 
@@ -805,7 +802,7 @@
   border-radius:30px;
   cursor:pointer;
   font-weight:bold;
-  z-index:1000;
+  z-index:9999;
 }
 
 #chatbox{
@@ -819,7 +816,7 @@
   border-radius:10px;
   padding:15px;
   color:white;
-  z-index:1000;
+  z-index:9999;
 }
 
 #chat-header{
@@ -855,10 +852,13 @@ document.getElementById("chat-btn").onclick = function(){
 
   const box = document.getElementById("chatbox");
 
-  box.style.display =
-    box.style.display === "block"
-    ? "none"
-    : "block";
+  if(box.style.display === "block"){
+    box.style.display = "none";
+  }
+  else{
+    box.style.display = "block";
+  }
+
 }
 
 function sendMessage(){
@@ -887,28 +887,28 @@ function sendMessage(){
   else if(input.includes("project")){
 
     response =
-    "Ashok built a Power BI Sales Dashboard project for analytics and visualization.";
+    "Ashok built a Power BI Sales Dashboard project.";
 
   }
 
   else if(input.includes("contact")){
 
     response =
-    "You can contact Ashok at: poluashokkumarreddy19@gmail.com";
+    "You can contact Ashok at poluashokkumarreddy19@gmail.com";
 
   }
 
   else if(input.includes("linkedin")){
 
     response =
-    "Ashok's LinkedIn profile is available in the contact section.";
+    "Ashok's LinkedIn is available in the contact section.";
 
   }
 
   else if(input.includes("github")){
 
     response =
-    "Ashok's GitHub profile is available in the contact section.";
+    "Ashok's GitHub is available in the contact section.";
 
   }
 
@@ -921,3 +921,4 @@ function sendMessage(){
 
 </script>
 
+</body>
