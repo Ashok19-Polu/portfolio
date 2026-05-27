@@ -877,8 +877,35 @@ function sendMessage(){
 
   let response =
     "Sorry, I don't understand.";
+  if(input.includes("hi") || input.includes("hello") || input.includes("hey")){
 
-  if(input.includes("skills")){
+  response =
+  "Hi 👋 Welcome to Ashok's portfolio website!";
+
+}
+
+else if(input.includes("who are you")){
+
+  response =
+  "I am Ashok's AI Assistant 🤖.";
+
+}
+
+else if(input.includes("education")){
+
+  response =
+  "Ashok is pursuing B.Tech in Computer Science Engineering.";
+
+}
+
+else if(input.includes("experience")){
+
+  response =
+  "Ashok is building experience through analytics and AI projects.";
+
+}
+
+ else if(input.includes("skills")){
 
     response =
     "Ashok knows Power BI, Python, SQL, Excel, Tableau, AI and Machine Learning.";
