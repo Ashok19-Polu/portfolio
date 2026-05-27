@@ -772,3 +772,152 @@
 
 </body>
 </html>
+<!-- AI CHATBOT -->
+
+<button id="chat-btn">🤖 AI Assistant</button>
+
+<div id="chatbox">
+
+  <div id="chat-header">
+    Ashok AI Assistant
+  </div>
+
+  <div id="chat-messages">
+    <p><b>AI:</b> Hi! Ask me about Ashok's skills, projects, or contact.</p>
+  </div>
+
+  <input type="text" id="user-input" placeholder="Ask something...">
+
+  <button onclick="sendMessage()">Send</button>
+
+</div>
+
+<style>
+
+#chat-btn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#c9a84c;
+  color:#0a1628;
+  border:none;
+  padding:12px 18px;
+  border-radius:30px;
+  cursor:pointer;
+  font-weight:bold;
+  z-index:1000;
+}
+
+#chatbox{
+  display:none;
+  position:fixed;
+  bottom:80px;
+  right:20px;
+  width:300px;
+  background:#111e38;
+  border:1px solid #c9a84c;
+  border-radius:10px;
+  padding:15px;
+  color:white;
+  z-index:1000;
+}
+
+#chat-header{
+  font-weight:bold;
+  margin-bottom:10px;
+  color:#c9a84c;
+}
+
+#chat-messages{
+  height:200px;
+  overflow-y:auto;
+  margin-bottom:10px;
+  font-size:14px;
+}
+
+#user-input{
+  width:70%;
+  padding:8px;
+}
+
+#chatbox button{
+  padding:8px;
+  background:#c9a84c;
+  border:none;
+  cursor:pointer;
+}
+
+</style>
+
+<script>
+
+document.getElementById("chat-btn").onclick = function(){
+
+  const box = document.getElementById("chatbox");
+
+  box.style.display =
+    box.style.display === "block"
+    ? "none"
+    : "block";
+}
+
+function sendMessage(){
+
+  let input =
+    document.getElementById("user-input")
+    .value
+    .toLowerCase();
+
+  let messages =
+    document.getElementById("chat-messages");
+
+  messages.innerHTML +=
+    "<p><b>You:</b> " + input + "</p>";
+
+  let response =
+    "Sorry, I don't understand.";
+
+  if(input.includes("skills")){
+
+    response =
+    "Ashok knows Power BI, Python, SQL, Excel, Tableau, AI and Machine Learning.";
+
+  }
+
+  else if(input.includes("project")){
+
+    response =
+    "Ashok built a Power BI Sales Dashboard project for analytics and visualization.";
+
+  }
+
+  else if(input.includes("contact")){
+
+    response =
+    "You can contact Ashok at: poluashokkumarreddy19@gmail.com";
+
+  }
+
+  else if(input.includes("linkedin")){
+
+    response =
+    "Ashok's LinkedIn profile is available in the contact section.";
+
+  }
+
+  else if(input.includes("github")){
+
+    response =
+    "Ashok's GitHub profile is available in the contact section.";
+
+  }
+
+  messages.innerHTML +=
+    "<p><b>AI:</b> " + response + "</p>";
+
+  document.getElementById("user-input").value = "";
+
+}
+
+</script>
+
